@@ -27,7 +27,7 @@ jobs:
         java-version: '8'
         distribution: 'corretto'
         cache: maven
-    - name: Build with Maven
+    - name: Build and Test with Maven
       run: mvn -B package --file pom.xml
 
     # Not needed for this project
