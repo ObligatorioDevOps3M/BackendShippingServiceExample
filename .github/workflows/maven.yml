@@ -21,7 +21,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Set up JDK Coretto 8
+    - name: Set up JDK Corretto 8
       uses: actions/setup-java@v4
       with:
         java-version: '8'
@@ -29,8 +29,6 @@ jobs:
         cache: maven
     - name: Build and Test with Maven
       run: mvn -B package --file pom.xml
-    - name: Validate JAR presence
-      run: ls target/*.jar
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag shipping-service-example:$(date +%s)
     # Not needed for this project
