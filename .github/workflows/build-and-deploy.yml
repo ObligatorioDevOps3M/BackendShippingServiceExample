@@ -11,9 +11,9 @@ name: CI/CD Workflow
 on:
   ##Revisar que dispara build y deploy en push aveces
   push:
-    branches: [ "main" , "staging" , "develop" ]
+    branches: [ "main" , "staging" , "develop" , "feature/*"]
   pull_request:
-    branches: [ "main" , "staging" , "develop" ]
+    branches: [ "main" , "staging" , "develop" , "feature/*" ]
 
 jobs:
   build:
