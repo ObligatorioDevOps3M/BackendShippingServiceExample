@@ -57,9 +57,9 @@ jobs:
     #    IMAGE_TAG: ${{ github.sha }}
       run: |
         IMAGE_TAG=latest
-        REPOSITORY_URI=198937174082.dkr.ecr.us-east-1.amazonaws.com/shipping 
-        docker build . --file Dockerfile --tag 198937174082.dkr.ecr.us-east-1.amazonaws.com/shipping:latest
-        docker push 198937174082.dkr.ecr.us-east-1.amazonaws.com/shipping:latest
+        REPOSITORY_URI=140598534703.dkr.ecr.us-east-1.amazonaws.com/ecr_obligatorio_develop/shipping 
+        docker build . --file Dockerfile --tag 140598534703.dkr.ecr.us-east-1.amazonaws.com/ecr_obligatorio_develop/shipping:latest
+        docker push 140598534703.dkr.ecr.us-east-1.amazonaws.com/ecr_obligatorio_develop/shipping:latest
    
   # Deploy de la aplicacion en AWS EKS
   ## Parametrizar:
