@@ -78,9 +78,9 @@ jobs:
       run: |
         VALUE=$(cat devops-repo-directory/terraform/options-${{ env.ENVIROMENT_NAME }}/ecr_repository_uri_shipping.txt)
         REPOSITORY_URI=$VALUE 
-        echo "IMAGE_NAME=$VALUE:${{ env.ENVIROMENT_NAME }}-nuevo2" >> $GITHUB_ENV
-        docker build . --file Dockerfile --tag $VALUE:${{ env.ENVIROMENT_NAME }}-nuevo2
-        docker push $VALUE:${{ env.ENVIROMENT_NAME }}-nuevo2
+        echo "IMAGE_NAME=$VALUE:${{ env.ENVIROMENT_NAME }}-nuevo3" >> $GITHUB_ENV
+        docker build . --file Dockerfile --tag $VALUE:${{ env.ENVIROMENT_NAME }}-nuevo3
+        docker push $VALUE:${{ env.ENVIROMENT_NAME }}-nuevo3
 
         
     - name: Update deployment.yaml with image name
@@ -104,7 +104,7 @@ jobs:
           else
             SERVICE_URL=$(kubectl get svc -o json | jq -r ".items[] | select(.metadata.name | test(\"shipping-service\")) | .status.loadBalancer.ingress[0].hostname")
             echo "El valor de mi variable es: $SERVICE_URL"
-            echo "http://$SERVICE_URL:5050/shipping" > service-url-shipping.txt
+            echo "http://$SERVICE_URL:8085/shipping" > service-url-shipping.txt
         fi
         
 

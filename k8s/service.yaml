@@ -9,7 +9,7 @@ spec:
     app: shipping
 
   ports:
-    - port: 5050
-      targetPort: 5050
+    - port: 8085
+      targetPort: 8085
 
   type: LoadBalancer
