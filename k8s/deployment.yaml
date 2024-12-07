@@ -17,7 +17,6 @@ spec:
     spec:
       containers:
       - name: shipping
-      #Parametrizar
         image: ${IMAGE_NAME}
         imagePullPolicy: Always
         ports:
