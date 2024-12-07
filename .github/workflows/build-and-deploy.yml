@@ -83,6 +83,10 @@ jobs:
         aws eks --region us-east-1 update-kubeconfig --name cluster_obligatorio_${{ env.ENVIROMENT_NAME }}
         kubectl apply -f k8s/deployment-updated.yaml
         kubectl apply -f k8s/service.yaml
+      
+  # Espera la generacion del service
+    - name: Wait for service deploy
+      run: sleep 20
 
   # Obtener y guardar la URL del servicio
     - name: Get service URL
