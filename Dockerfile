@@ -5,6 +5,6 @@ WORKDIR /app
 # Copiar el archivo .jar de Maven al contenedor
 COPY ./target/shipping-service-example-0.0.1-SNAPSHOT.jar .
 # Exponer el puerto en el que la aplicación estará disponible
-EXPOSE 4040
+EXPOSE 4041
 # Comando para ejecutar la aplicación
 CMD ["java", "-jar", "./shipping-service-example-0.0.1-SNAPSHOT.jar"]
