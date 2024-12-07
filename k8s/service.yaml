@@ -9,7 +9,7 @@ spec:
     app: shipping
 
   ports:
-    - port: 4041
-      targetPort: 4041
+    - port: 5050
+      targetPort: 5050
 
   type: LoadBalancer
