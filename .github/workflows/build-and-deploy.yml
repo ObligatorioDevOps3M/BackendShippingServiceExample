@@ -78,7 +78,7 @@ jobs:
       run: |
         VALUE=$(cat devops-repo-directory/terraform/options-${{ env.ENVIROMENT_NAME }}/ecr_repository_uri_shipping.txt)
         REPOSITORY_URI=$VALUE 
-        echo "IMAGE_NAME=$VALUE:${{ env.ENVIROMENT_NAME }}" >> $GITHUB_ENV
+        echo "IMAGE_NAME=$VALUE:${{ env.ENVIROMENT_NAME }}-nuevo" >> $GITHUB_ENV
         docker build . --file Dockerfile --tag $VALUE:${{ env.ENVIROMENT_NAME }}-nuevo
         docker push $VALUE:${{ env.ENVIROMENT_NAME }}-nuevo
 
