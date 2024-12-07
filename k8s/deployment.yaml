@@ -4,9 +4,8 @@ metadata:
   name: shipping
   labels: 
      app: shipping
-
 spec:
-  replicas: 1 
+  replicas: 2
   selector:
     matchLabels:
       app: shipping
@@ -18,11 +17,11 @@ spec:
     spec:
       containers:
       - name: shipping
-      #Parametrizar:
-        image: 198937174082.dkr.ecr.us-east-1.amazonaws.com/shipping:latest
+      #Parametrizar
+        image: ${IMAGE_NAME}
         imagePullPolicy: Always
         ports:
-        - containerPort: 8080
+        - containerPort: 4041
   strategy:
     type: RollingUpdate
     rollingUpdate:
