@@ -1,4 +1,4 @@
-name: api payments testing
+name: api shipping testing
 on:
     push:
         branches: [ "main" , "staging" , "develop", "feature/*"]
