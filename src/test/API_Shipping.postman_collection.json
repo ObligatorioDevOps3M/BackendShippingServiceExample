@@ -68,5 +68,12 @@
 			},
 			"response": []
 		}
+	],
+	"variable": [
+		{
+			"key": "API_GATEWAY_IP",
+			"value": "localhost:8085",
+			"type": "default"
+		}
 	]
 }
