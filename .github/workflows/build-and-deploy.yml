@@ -97,7 +97,7 @@ jobs:
           else
             SERVICE_URL=$(kubectl get svc -o json | jq -r ".items[] | select(.metadata.name | test(\"shipping-service\")) | .status.loadBalancer.ingress[0].hostname")
             echo "El valor de mi variable es: $SERVICE_URL"
-            echo "http://$SERVICE_URL:8085/shipping" > service-url-shipping.txt
+            echo "http://$SERVICE_URL:8085" > service-url-shipping.txt
         fi
         
 
