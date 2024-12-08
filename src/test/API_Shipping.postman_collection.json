@@ -1,0 +1,72 @@
+{
+	"info": {
+		"_postman_id": "613786b9-bc74-4940-8195-aa63cbaabd6d",
+		"name": "API_Shipping",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8226521",
+		"_collection_link": "https://proyecto-final-ort-orue-rivero.postman.co/workspace/6795b0df-c2ae-4e20-b455-acd598172048/collection/8226521-613786b9-bc74-4940-8195-aa63cbaabd6d?action=share&source=collection_link&creator=8226521"
+	},
+	"item": [
+		{
+			"name": "Obtener shippings",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Test para POST /shipping/{id} (agregar un envío)\r",
+							"pm.test(\"El estado de la respuesta es 200 cuando se agrega un envío\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"La creación del envío es reconocida\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Adding shipping\");\r",
+							"});\r",
+							"\r",
+							"// Test para GET /shipping/{id} cuando el envío existe\r",
+							"pm.test(\"El estado de la respuesta es 200 cuando el envío existe\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Los datos del envío se devuelven correctamente\", function () {\r",
+							"    var jsonResponse = pm.response.json();\r",
+							"    pm.expect(jsonResponse).to.have.property('status');\r",
+							"    pm.expect(jsonResponse).to.have.property('id');\r",
+							"    pm.expect(jsonResponse.status).to.be.oneOf([\"Delivered\", \"In transit\", \"Preparing\"]);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_GATEWAY_IP}}/shipping/c",
+					"host": [
+						"{{API_GATEWAY_IP}}"
+					],
+					"path": [
+						"shipping",
+						"c"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
